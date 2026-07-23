@@ -1,0 +1,28 @@
+metadata_version: 1
+name: Implicit Bias-Like Patterns in Reasoning Models
+description: Implicit biases refer to automatic mental processes that shape perceptions,
+  judgments, and behaviors. While previous research on bias in large language models
+  has focused primarily on outputs, we introduce the Reasoning Model Implicit Association
+  Test (RM-IAT) to study bias-like processing asymmetries in reasoning models—LLMs
+  that generate explicit step-by-step reasoning before producing a response. By measuring
+  reasoning token counts as an index of computational effort, the RM-IAT captures
+  processing-efficiency asymmetries analogous to response latency differences in the
+  human IAT. Across four models (o3-mini, DeepSeek-R1, gpt-oss-20b, and Qwen-3 8B),
+  we find consistent evidence that association-incompatible tasks require greater
+  computational effort than association-compatible tasks. Claude 3.7 Sonnet exhibited
+  reversed patterns, which thematic analysis linked to its unique internal focus on
+  reasoning about bias and stereotypes—suggesting that token asymmetries can reflect
+  regulatory processes rather than association activation alone. To establish convergent
+  validity, we administered two downstream behavioral tasks and found that larger
+  RM-IAT asymmetries predicted stronger behavioral bias in both word association and
+  decision-making contexts. Together, these findings demonstrate that the RM-IAT captures
+  meaningful variation in how reasoning models process stereotypical information,
+  and that these patterns extend beyond internal reasoning to shape model behavior
+  in consequential downstream tasks.
+authors:
+- name: Messi H.J. Lee
+  affiliations:
+  - name: Washington University in St. Louis
+- name: Calvin K. Lai
+  affiliations:
+  - name: Rutgers, The State University of New Jersey

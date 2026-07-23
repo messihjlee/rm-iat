@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "RM-IAT: Code for Implicit Bias-Like Patterns in Reasoning Models"
+version: 1.0.0
+date-released: "2026-07-23"
+authors:
+  - given-names: Messi H.J.
+    family-names: Lee
+    affiliation: Washington University in St. Louis
+  - given-names: Calvin K.
+    family-names: Lai
+    affiliation: Rutgers, The State University of New Jersey
+repository-code: "https://github.com/messihjlee/rm-iat"
+license: MIT
+# doi: "<add DOI here after archiving a release via Zenodo>"
