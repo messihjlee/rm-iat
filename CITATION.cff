@@ -13,4 +13,8 @@ authors:
     affiliation: Rutgers, The State University of New Jersey
 repository-code: "https://github.com/messihjlee/rm-iat"
 license: MIT
-# doi: "<add DOI here after archiving a release via Zenodo>"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21504156"
+    description: "Archived version v1.0.0 on Zenodo"
+doi: "10.5281/zenodo.21504156"
