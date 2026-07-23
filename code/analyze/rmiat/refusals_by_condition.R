@@ -34,11 +34,11 @@ load_model <- function(model_dir, attr_map, capitalize = TRUE) {
   })
 }
 
-o3mini    <- load_model("o3-mini/o3-mini",           capitalize = TRUE)  %>% mutate(model = "o3-mini")
-deepseek  <- load_model("DeepSeek-R1/DeepSeek-R1",   capitalize = TRUE)  %>% mutate(model = "DeepSeek-R1")
-claude    <- load_model("Claude3.7/Claude3.7",        capitalize = TRUE)  %>% mutate(model = "Claude 3.7 Sonnet")
-gpt20b    <- load_model("gpt-oss-20b/gpt-oss-20b",   capitalize = FALSE) %>% mutate(model = "gpt-oss-20b")
-qwen      <- load_model("Qwen3-8B/Qwen3-8B",         capitalize = FALSE) %>% mutate(model = "Qwen-3 8B")
+o3mini    <- load_model("o3-mini",           capitalize = TRUE)  %>% mutate(model = "o3-mini")
+deepseek  <- load_model("DeepSeek-R1",   capitalize = TRUE)  %>% mutate(model = "DeepSeek-R1")
+claude    <- load_model("Claude3.7",        capitalize = TRUE)  %>% mutate(model = "Claude 3.7 Sonnet")
+gpt20b    <- load_model("gpt-oss-20b",   capitalize = FALSE) %>% mutate(model = "gpt-oss-20b")
+qwen      <- load_model("Qwen3-8B",         capitalize = FALSE) %>% mutate(model = "Qwen-3 8B")
 
 all_data <- bind_rows(o3mini, deepseek, claude, gpt20b, qwen)
 
