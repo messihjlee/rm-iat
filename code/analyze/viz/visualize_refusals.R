@@ -117,15 +117,27 @@ refusal_filtered = refusal_filtered %>%
 
 # Visualization ----------------------------------------------------------------
 
+# Short axis labels (full RM-IAT names remain in the underlying data/source data;
+# only the x-axis display text is abbreviated to prevent label overflow)
+short_iat_labels <- c(
+  "European/African Americans +\nPleasant/Unpleasant (1)" = "Race(1)",
+  "European/African Americans +\nPleasant/Unpleasant (2)" = "Race(2)",
+  "European/African Americans +\nPleasant/Unpleasant (3)" = "Race(3)",
+  "Men/Women +\nCareer/Family" = "Career/Family",
+  "Men/Women +\nMathematics/Arts" = "Math/Arts",
+  "Mental/Physical Diseases +\nTemporary/Permanent" = "Mental/Physical"
+)
+
 ggplot(refusal_filtered, aes(x = IAT, y = refusal_pct, fill = model)) +
-  geom_col(position = position_dodge(width = 0.8), 
-           width = 0.8, 
+  geom_col(position = position_dodge(width = 0.8),
+           width = 0.8,
            color = "black") +
   facet_wrap(~condition, ncol = 2) + # Stacked is usually better for wide IAT labels
   geom_hline(yintercept = 0, color = "gray50") +
   # Use length of unique IATs in the filtered set for separators
-  geom_vline(xintercept = seq(1.5, length(unique(refusal_filtered$IAT)) - 0.5, by = 1), 
+  geom_vline(xintercept = seq(1.5, length(unique(refusal_filtered$IAT)) - 0.5, by = 1),
              linetype = "dotted", color = "gray70") +
+  scale_x_discrete(labels = short_iat_labels) +
   scale_fill_jama() +
   theme_bw() +
   labs(
