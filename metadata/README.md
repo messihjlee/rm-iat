@@ -67,11 +67,11 @@ Each model directory under `code/analyze/rmiat/` contains the same set of script
 
 | Script | Description | Reproduces |
 |---|---|---|
-| `mixed.R` | Mixed-effects models (`tokens ~ condition + (1\|prompt)`) | Tables S6–S10 |
-| `effect_sizes.R` | Cohen's *d* effect sizes (with and without refusals) | Table S3 |
-| `refusals.R` | Counts refusals; t-test comparing token counts | Table S4 |
-| `descriptive.R` | Descriptive statistics (mean/SD tokens by IAT and condition) | Table S5 |
-| `iat.R` | Counts "IAT" mentions in reasoning text | Section 3.1, Table S11 |
+| `mixed.R` | Mixed-effects models (`tokens ~ condition + (1\|prompt)`) | Table S5 |
+| `effect_sizes.R` | Cohen's *d* effect sizes (with and without refusals) | Table S8 |
+| `refusals.R` | Counts refusals; t-test comparing token counts | Table S3 |
+| `descriptive.R` | Descriptive statistics (mean/SD tokens by IAT and condition) | Table S4 |
+| `iat.R` | Counts "IAT" mentions in reasoning text | Not in current manuscript draft |
 
 > **Note:** `iat.R` is not run for o3-mini because reasoning tokens were not available for that model.
 
@@ -209,21 +209,21 @@ To run the RM-IAT analysis on a new model's data:
 
 | Step | Script(s) | Output | Reproduces |
 |---|---|---|---|
-| 1 | `rmiat/{model}/mixed.R` × 5 | Printed summaries, variance components, `.RData` per model | Tables S6–S10 |
-| 2 | `rmiat/{model}/effect_sizes.R` × 5 | Cohen's *d* with/without refusals | Table S3 |
-| 3 | `rmiat/{model}/refusals.R` × 5 | Refusal counts, t-tests | Table S4 |
-| 4 | `rmiat/{model}/descriptive.R` × 5 | Mean/SD tokens by IAT × condition | Table S5 |
-| 5 | `viz/visualize.R`, `viz/visualize_refusals.R` | `results/main.pdf`, `results/refusals.pdf` | Figures 2 & 3 |
-| 6 | `rmiat/{model}/iat.R` × 4 | "IAT" mention counts by condition | Section 3.1, Table S11 |
-| 7 | `stm/stm.R` → `stm/topic3.R` | Topic model output, Topic 3 analysis | Section S1 |
-| 8 | `rmiat/o3-mini/sensitivity_analysis.R` | Sensitivity analysis output | Section S2 |
+| 1 | `rmiat/{model}/mixed.R` × 5 | Printed summaries, variance components, `.RData` per model | Table S5 |
+| 2 | `rmiat/{model}/effect_sizes.R` × 5 | Cohen's *d* with/without refusals | Table S8 |
+| 3 | `rmiat/{model}/refusals.R` × 5 | Refusal counts, t-tests | Table S3 |
+| 4 | `rmiat/{model}/descriptive.R` × 5 | Mean/SD tokens by IAT × condition | Table S4 |
+| 5 | `viz/visualize.R`, `viz/visualize_refusals.R` | `results/fig2.pdf`, `results/fig3.pdf` | Figures 2 & 3 |
+| 6 | `rmiat/{model}/iat.R` × 4 | "IAT" mention counts by condition | Not in current manuscript draft |
+| 7 | `stm/stm.R` → `stm/topic3.R` | Topic model output, Topic 3 analysis | Section S8 |
+| 8 | `rmiat/o3-mini/sensitivity_analysis.R` | Sensitivity analysis output | Section S7 |
 | 9 | `downstream/analyze_validity.R`, `downstream/describe_downstream.R` | Convergent validity results | Supplementary (WAT & RDT) |
 
 ### Key outputs
 
-- **`results/main.pdf`** — Cross-model comparison of Cohen's *d* effect sizes with 95% CIs (Figure 2).
-- **`results/refusals.pdf`** — Refusal rates by model, IAT, and condition.
-- **Printed to console** — All tables (S3–S11) are printed during execution.
+- **`results/fig2.pdf`** — Cross-model comparison of Cohen's *d* effect sizes with 95% CIs (Figure 2).
+- **`results/fig3.pdf`** — Refusal rates by model, IAT, and condition.
+- **Printed to console** — All tables (S3–S9) are printed during execution.
 
 **Expected run time on a normal desktop:** The full pipeline (all 9 steps) takes approximately 10–20 minutes. The structural topic model (Step 7) is the most time-consuming step (~5–10 minutes); all other steps complete in under a minute each.
 

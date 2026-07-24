@@ -141,5 +141,5 @@ ggplot(effect_sizes, aes(x = IAT, y = cohens_d, fill = model, color = model, sha
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 
-ggsave('../../../results/main.pdf', width = 11, height = 6, dpi = 'retina', device = cairo_pdf)
+ggsave('../../../results/fig2.pdf', width = 11, height = 6, dpi = 'retina', device = cairo_pdf)
 

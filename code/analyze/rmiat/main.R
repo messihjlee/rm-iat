@@ -1,7 +1,7 @@
 # Main script to run all analyses sequentially
 
 ## 1) Summary output of mixed-effects models
-## Reproduces Table S6 - S10 of the Supplementary Materials.
+## Reproduces Table S5 of the Supplementary Materials.
 
 ### o3-mini
 setwd("~/capsule/code/analyze/rmiat/o3-mini")
@@ -24,7 +24,7 @@ setwd("~/capsule/code/analyze/rmiat/Qwen3-8B")
 source("mixed.R", echo = TRUE)
 
 ## 2) Effect Sizes
-## Reproduces Table S3
+## Reproduces Table S8
 
 ### o3-mini
 setwd("~/capsule/code/analyze/rmiat/o3-mini")
@@ -47,7 +47,7 @@ setwd("~/capsule/code/analyze/rmiat/Qwen3-8B")
 source("effect_sizes.R", echo = TRUE)
 
 ## 3) Number of refusals
-## Reproduces Table S4
+## Reproduces Table S3
 
 ### o3-mini
 setwd("~/capsule/code/analyze/rmiat/o3-mini")
@@ -70,7 +70,7 @@ setwd("~/capsule/code/analyze/rmiat/Qwen3-8B")
 source("refusals.R", echo = TRUE)
 
 ## 4) Descriptive Statistics
-## Reproduces Table S5
+## Reproduces Table S4
 
 ### o3-mini
 setwd("~/capsule/code/analyze/rmiat/o3-mini")
@@ -100,7 +100,7 @@ source("visualize.R", echo = TRUE)
 source("visualize_refusals.R", echo = TRUE)
 
 ## 6) Mentioning of "IAT"
-## Reproduces analysis in Section 3.1 and Table S11
+## Not reported in the current manuscript draft (no corresponding section/table)
 
 ### o3-mini is not included as reasoning tokens for o3-mini were unavailable.
 
@@ -121,13 +121,13 @@ setwd("~/capsule/code/analyze/rmiat/Qwen3-8B")
 source("iat.R", echo = TRUE)
 
 ## 7) Structural Topic Model (STM)
-## Reproduces analysis in Section S1
+## Reproduces analysis in Section S8
 setwd("~/capsule/code/analyze/stm")
 source("stm.R", echo = TRUE)
 source("topic3.R", echo = TRUE)
 
 ## 8) Supplementary Analaysis
-## Reproduces sensitivity analysis in Section S2
+## Reproduces sensitivity analysis in Section S7
 setwd("~/capsule/code/analyze/rmiat/o3-mini")
 source("sensitivity_analysis.R", echo = TRUE)
 
