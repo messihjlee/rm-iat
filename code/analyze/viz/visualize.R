@@ -115,13 +115,30 @@ effect_sizes = effect_sizes %>%
                                           'gpt-oss-20b', 'Qwen3-8B')))
   
 
+# Short axis labels, matching the abbreviated RM-IAT names used throughout
+# the Supplementary Information and main text (full names remain in the
+# underlying data/source data; only the x-axis display text is abbreviated)
+short_iat_labels <- c(
+  "Flowers/Insects +\nPleasant/Unpleasant" = "Flowers/Insects",
+  "Instruments/Weapons +\nPleasant/Unpleasant" = "Instruments/Weapons",
+  "European/African Americans +\nPleasant/Unpleasant (1)" = "Race(1)",
+  "European/African Americans +\nPleasant/Unpleasant (2)" = "Race(2)",
+  "European/African Americans +\nPleasant/Unpleasant (3)" = "Race(3)",
+  "Men/Women +\nCareer/Family" = "Career/Family",
+  "Men/Women +\nMathematics/Arts" = "Math/Arts",
+  "Men/Women +\nScience/Arts" = "Science/Arts",
+  "Mental/Physical Diseases +\nTemporary/Permanent" = "Mental/Physical",
+  "Young/Old People +\nPleasant/Unpleasant" = "Young/Old"
+)
+
 ggplot(effect_sizes, aes(x = IAT, y = cohens_d, fill = model, color = model, shape = model)) +
   geom_point(size = 2, position = position_dodge(width = 0.8)) +
-  geom_errorbar(aes(ymin = lower_ci, ymax = upper_ci), 
+  geom_errorbar(aes(ymin = lower_ci, ymax = upper_ci),
                 position = position_dodge(width = 0.8), width = 0.2) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
-  geom_vline(xintercept = seq(1.5, length(unique(effect_sizes$IAT))-0.5), 
+  geom_vline(xintercept = seq(1.5, length(unique(effect_sizes$IAT))-0.5),
              linetype = "dotted", color = "gray70") +
+  scale_x_discrete(labels = short_iat_labels) +
   scale_fill_jama() +
   scale_color_jama() +
   scale_shape_manual(values = c(21, 22, 23, 24, 25)) +
