@@ -29,7 +29,7 @@ For the full repository structure, per-script descriptions, data schema, and ste
 ## Data & Code Availability
 
 - **Code (this repository):** https://github.com/messihjlee/rm-iat — archived version (v1.0.0): https://doi.org/10.5281/zenodo.21504156
-- **Reproducible capsule (CodeOcean):** `<CodeOcean capsule DOI — to be added>`
+- **Reproducible capsule (CodeOcean):** https://doi.org/10.24433/CO.0804074.v2 (prospective)
 - **Data (Figshare):** https://doi.org/10.6084/m9.figshare.33068699 — contains all raw RM-IAT, WAT, and Resume Decision Task datasets (see [metadata/README.md](metadata/README.md#data) for the data schema).
 
 To reproduce the analyses, download the data deposit from Figshare into a `data/` directory alongside `code/` (matching the layout documented in [metadata/README.md](metadata/README.md)), or use the CodeOcean capsule, which bundles code, data, and environment together for a one-click reproducible run.
