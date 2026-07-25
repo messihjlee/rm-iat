@@ -123,8 +123,8 @@ short_iat_labels <- c(
   "European/African Americans +\nPleasant/Unpleasant (1)" = "Race(1)",
   "European/African Americans +\nPleasant/Unpleasant (2)" = "Race(2)",
   "European/African Americans +\nPleasant/Unpleasant (3)" = "Race(3)",
-  "Men/Women +\nCareer/Family" = "Career/Family",
-  "Men/Women +\nMathematics/Arts" = "Math/Arts",
+  "Men/Women +\nCareer/Family" = "Gender-Career",
+  "Men/Women +\nMathematics/Arts" = "Gender-Math",
   "Mental/Physical Diseases +\nTemporary/Permanent" = "Mental/Physical"
 )
 
